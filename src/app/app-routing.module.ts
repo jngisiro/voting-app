@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'home',
     component: VotingHomeComponent,
   },
+  {
+    path: 'vote',
+    loadChildren: () => import('./vote/vote.module').then((m) => m.VoteModule),
+  },
 ];
 
 @NgModule({

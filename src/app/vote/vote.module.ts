@@ -6,10 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { VoteService } from './service/vote.service';
+import { VoteRoutingModule } from './vote-routing.module';
 
 @NgModule({
   declarations: [AngularVotingComponent, ThankYouComponent],
-  imports: [CommonModule, HttpClientModule, FormsModule],
+  imports: [CommonModule, HttpClientModule, FormsModule, VoteRoutingModule],
   providers: [VoteService],
 })
 export class VoteModule {}
