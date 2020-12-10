@@ -1,0 +1,32 @@
+<h1 [innerText]="title"></h1>
+<hr>
+<h5 [innerText]="subtitle"></h5>
+<br>
+<form #voteForm="ngForm" *ngIf="questions && questions.length>0" (submit)="submitVote(voteForm.value,$event)">
+    <table class="table">
+        <tr *ngFor="let question of questions">
+            <th>{{question.question}}</th>
+            <td>
+                <input type="radio" [id]="question.questionNumber + 1" value="1" [name]="question.questionNumber"
+                    ngModel>1
+            </td>
+            <td>
+                <input type="radio" [id]="question.questionNumber + 2" value="2" [name]="question.questionNumber"
+                    ngModel>2
+            </td>
+            <td>
+                <input type="radio" value="3" [id]="question.questionNumber + 3" [name]="question.questionNumber"
+                    ngModel>3
+            </td>
+            <td>
+                <input type="radio" value="4" [id]="question.questionNumber + 4" [name]="question.questionNumber"
+                    ngModel>4
+            </td>
+            <td>
+                <input type="radio" value="5" [id]="question.questionNumber + 5" [name]="question.questionNumber"
+                    ngModel>5
+            </td>
+        </tr>
+    </table>
+    <button class="btn btn-primary" type="submit">Submit My Vote!</button>
+</form>
